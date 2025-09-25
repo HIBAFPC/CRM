@@ -39,6 +39,7 @@ class Lead(models.Model):
     notes = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
 
     def __str__(self):
         return f"Lead: {self.customer.name} ({self.status})"
@@ -84,4 +85,3 @@ class Activity(models.Model):
     def __str__(self):
         return f"{self.type} with {self.customer.name} on {self.date.date()}"
 
-    
